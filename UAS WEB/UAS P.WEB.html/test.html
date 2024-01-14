@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-result {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+        .search-result strong {
+            font-weight: bold;
+        }
+        .search-result p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cetak Tiket</h2>
+        <form class="form-group" action="#" method="post">
+            <div class="form-group">
+                <label for="kode-pemesanan">Kode Pemesanan:</label>
+                <input type="text" name="kode-pemesanan" id="kode-pemesanan">
+            </div>
+            <input type="submit" class="search-button" value="Cari">
+        </form>
+        <div class="search-result"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            const searchButton = document.querySelector(".search-button");
+            const searchResult = document.querySelector(".search-result");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const xhr = new XMLHttpRequest();
+                xhr.open("POST", "/cari-tiket", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        searchResult.style.display = "block";
+                        searchResult.innerHTML = "";
+
+                        const data = JSON.parse(xhr.responseText);
+
+                        if (data.length > 0) {
+                            data.forEach((item) => {
+                                const p = document.createElement("p");
+                                p.textContent = `${item.nama} (${item.noKtp}) - ${item.kodePemesanan}`;
+                                searchResult.appendChild(p);
+                            });
+                        } else {
+                            const p = document.createElement("p");
+                            p.textContent = "Data tidak ditemukan.";
+                            searchResult.appendChild(p);
+                        }
+                    }
+                };
+
+                xhr.send(new FormData(form));
+            });
+
+            searchButton.addEventListener("click", () => {
+                searchResult.style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>

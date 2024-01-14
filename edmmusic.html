@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Musikin</title>
+    <link rel="icon" href="logo_musikin_aja-removebg-preview.png">
+   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="navbar">            
+            <div class="input-box">
+                <input type="text" placeholder="Search...">
+                <span class="icon">
+                    <i class="uil uil-search search-icon"></i>
+                </span>
+                <i class="uil uil-times close-icon"></i>
+            </div>
+            <script>
+            let inputBox = document.querySelector(".input-box"),
+            searchIcon = document.querySelector(".icon"),
+            closeIcon = document.querySelector(".close-icon");
+            searchIcon.addEventListener("click", () => inputBox.classList.add("open"));
+            closeIcon.addEventListener("click", () => inputBox.classList.remove("open"));
+
+            document.addEventListener("DOMContentLoaded", function () {
+            let inputBox = document.querySelector(".input-box input");
+            let albumDescriptions = document.querySelectorAll(".deskripsi");
+
+            inputBox.addEventListener("input", function () {
+            let searchQuery = inputBox.value.toLowerCase();
+
+            albumDescriptions.forEach(function (album) {
+            let albumTitle = album.querySelector("h4").innerText.toLowerCase();
+                    if (albumTitle.includes(searchQuery)) {
+                        album.style.display = "block";
+                    } else {
+                        album.style.display = "none";
+                    }
+                });
+            });
+        });
+            </script>
+            </div>
+
+       
+        <div class="wrapper">
+            
+            <div class="sidebar">
+                <img src="logo_musikin_aja-removebg-preview.png" class="logo">
+                <a class="active" href="login.html">Logout</a>
+                <a class="active" href="menu.html">Menu</a>
+                <a href="denycaknan.html">Deny Caknan</a>
+                <a href="pamungkas.html">Pamungkas</a>
+                <a href="hal.html">Hal</a>
+                <a href="hindia.html">Hindia</a>
+                <a href="forrevenge.html">For Revenge</a>
+                <a href="seventeen.html">Seventeen</a>
+                <a href="geisha.html">Geisha</a>
+                <a href="thelantis.html">The Lantis</a>
+              </div>
+                 
+            
+        </div>
+        <div class="bingkai">
+           
+            <div class="judul-bingkai">
+                
+                <h4>Untuk anda</h4>
+            </div>
+            <div class="album">
+               
+                <div class="deskripsi">
+                    <a href="Que Pasa.html"><img class="gambar-album" src="que pasa.jpeg" alt=""></a>
+                    <h4>Que Pasa</h4>
+                    <h4>'Wisnu Santika'</h4>
+  
+                </div>
+                <div class="deskripsi">
+                    <a href="cartel.html"><img class="gambar-album" src="cartel.jpeg" alt=""></a>
+                    <h4>Cartel</h4>
+                    <h4>'Wisnu Santika'</h4>
+ 
+                </div>
+                <div class="deskripsi">
+                    <a href="sahara.html"><img class="gambar-album" src="sahara.jpeg" alt=""></a>
+                    <h4>Sahara</h4>
+                    <h4>'Wisnu Santika'</h4>
+   
+                </div>
+                <div class="deskripsi">
+                    <a href="tequila.html"><img class="gambar-album" src="tequila.jpeg" alt=""></a>
+                    <h4>Tequila</h4>
+                    <h4>'Wisnu Santika'</h4>
+                    
+
+                </div>
+                <div class="deskripsi">
+                  <a href="aku sing gemati.html"><img class="gambar-album" src="jj.jpeg" alt=""></a>
+                  <h4>DJ Aku sing gemati</h4>
+                  <h4>'Ambon DJ'</h4>
+
+              </div>
+              <div class="deskripsi">
+                  <a href="dj bola bali.html"><img class="gambar-album" src="jj.jpeg" alt=""></a>
+                  <h4>DJ Bola Bali Nggo Dolanan</h4>
+                  <h4>'Ambonn DJ'</h4>
+
+              </div>
+              <div class="deskripsi">
+                  <a href="dj malam pagi.html"><img class="gambar-album" src="jj.jpeg" alt=""></a>
+                  <h4>DJ Malam Pagi</h4>
+                  <h4>'Ambon DJ'</h4>
+ 
+              </div>
+              <div class="deskripsi">
+                  <a href="dj mabuk cinta.html"><img class="gambar-album" src="jj.jpeg" alt=""></a>
+                  <h4>DJ Mabuk Cinta</h4>
+                  <h4>'Ambon DJ'</h4>
+                  
+
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+  <div class="waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+  </div>
+  <ul class="social-icon">
+    <li class="social-icon__item"><a class="social-icon__link" href="#">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a></li>
+    <li class="social-icon__item"><a class="social-icon__link" href="#">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a></li>
+    <li class="social-icon__item"><a class="social-icon__link" href="#">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a></li>
+    <li class="social-icon__item"><a class="social-icon__link" href="#">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a></li>
+  </ul>
+  <ul class="menu">
+    <li class="menu__item"><a class="menu__link" href="denycaknan.html">DenyCaknan</a></li>
+            <li class="menu__item"><a class="menu__link" href="pamungkas.html">Pamungkas</a></li>
+            <li class="menu__item"><a class="menu__link" href="hal.html">Hal</a></li>
+            <li class="menu__item"><a class="menu__link" href="hindia.html">hindia</a></li>
+            <li class="menu__item"><a class="menu__link" href="forrevenge.html">For Revenge</a></li>
+            <li class="menu__item"><a class="menu__link" href="seventeen.html">Seventeen</a></li>
+            <li class="menu__item"><a class="menu__link" href="geisha.html">Geisha</a></li>
+            <li class="menu__item"><a class="menu__link" href="thelantis.html">The Lantis</a></li>
+
+  </ul>
+
+</footer>
+</body>
+</html> 

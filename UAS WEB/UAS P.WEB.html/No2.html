@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pemesanan Tiket Kereta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: grey;
+        }
+
+        header {
+            background-image: url(gerbong\ kereta.jpeg);
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        i {
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: grey;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Formulir Pemesanan Tiket Kereta</h1>
+        <i>PT. Kreta Api Indonesia (Persero)<i>
+    </header>
+    <div class="container">
+        <div class="form-group">
+            <input type="text" id="kodePemesanan" name="kodePemesanan" placeholder="Masukkan kode pemesanan" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="dari" name="dari" placeholder="Masukkan rute" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="tanggalBerangkat" name="tanggalBerangkat" placeholder="Masukkan tanggal berangkat"
+                required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="tujuan" name="tujuan" placeholder="Masukkan tujuan" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="tanggalTiba" name="tanggalTiba" placeholder="Masukkan tanggal tiba" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="namaLengkap" name="namaLengkap" placeholder="Masukkan nama lengkap" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="noKTP" name="noKTP" pattern="\d{12}" title="Harap masukkan 12 digit angka"
+                placeholder="Masukkan no ktp" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="tempatDuduk" name="tempatDuduk" placeholder="Masukkan no tempat duduk" required>
+        </div>
+
+        <div class="form-group">
+            <label for="jenisPembeli">Jenis Pembeli:</label>
+            <select id="jenisPembeli" name="jenisPembeli" required>
+                <option value="dewasa">Dewasa</option>
+                <option value="anak">Anak-Anak</option>
+            </select>
+        </div>
+
+        <button type="submit">Pesan Tiket</button>
+    </div>
+    <footer>
+        &copy; 2024 PT.KAI INDONESIA. Hak Cipta Dilindungi Undang-Undang.
+    </footer>
+</body>
+
+</html>

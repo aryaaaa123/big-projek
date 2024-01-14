@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+.input-box{
+  position: relative;
+  height: 55px;
+  max-width: 55px;
+  width: 100%;
+  padding-left: 20px;
+  margin: 0 40px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.input-box.open{
+  max-width: 350px;
+}
+input{
+  position: relative;
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  background-color: #fff;
+}
+.input-box.open{
+  padding: 0 15px 0 65px;
+}
+.icon{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 60px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.search-icon,
+.close-icon{
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.search-icon{
+  color: #4070f4;
+  
+  transform: translateY(-50%) rotate(90deg);
+}
+.input-box.open .search-icon{
+  transform: translateY(-50%) rotate(0);
+}
+.close-icon{
+  right: -45px;
+  color: #aeaeae;
+  padding: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.input-box.open .close-icon{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+
+
+
+
+
+.container {
+    height: 900px;
+    width: 100%;
+    background-image: url(image.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.logo {
+    width: 120px;
+    margin-top: -15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+
+.navbar {
+  width: 84%;
+  left: 40%;
+  height: 58px;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 150px;
+  background-color:white;
+  border-radius: 14px;
+  
+}
+.input_search{
+width: 30%;
+height: auto;
+font-size: 18px;
+padding: 5px;
+padding-left: 350px;
+
+}
+.nav_item{
+float: right;
+display: inline;
+color: #f2f2f2;
+text-align: center;
+padding: 30px;
+text-decoration: none;
+font-size: 17px;
+}
+.nav:hover {
+background-color: #ddd;
+color: blue;
+}
+
+.sidebar {
+  margin: 0;
+  padding-top: 20px;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #000000;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #000000;
+  color: white;
+}
+
+
+.side_bar{
+float: left;
+display: block;
+padding: 5px;
+text-decoration: none;
+font-size: 17px;
+margin: left 10px;
+
+}
+
+.side_bar ul {
+list-style-type: georgian;
+padding: 0;
+}
+
+.side_bar li {
+margin-bottom: 20px;
+
+}
+
+.side_bar a {
+color: rgb(252, 252, 252);
+text-decoration: none;
+}
+
+
+
+
+.bingkai {
+
+   
+    background-image: url(backborder.jpg);
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+    margin-left: 200px;
+    margin-top: 0;
+    border-radius: 15px;
+    
+
+
+}
+
+.body-card {
+    padding: 10px 15px;
+}
+
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.album {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gambar-album {
+    margin-left: 42px;
+    margin-top: 20px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s ease;
+}
+
+.deskripsi a img:hover {
+    color: #ffffff;
+    margin-bottom: 8px;
+    transform: scale(1.1);
+}
+
+.deskripsi {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.deskripsi p {
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.deskripsi h4  {
+    text-align: center;
+    margin-left: 45px;
+}
+
+.judul-bingkai {
+  padding-top: 25px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    
+}
+
+ 
+    .judul {
+      padding-top: 25px;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+    
+    }
+    
+  
+
+
+.wrapper .sidebar{
+  background-color:#1C77E8;
+  position:absolute;
+  top: 0;
+  left: -5px;
+  width: 180px;
+  height: 100%;
+  padding-left: 0;
+}
+
+.wrapper .sidebar .profile{
+  margin-bottom: 30px;
+  text-align: center;
+  
+}
+
+.wrapper .sidebar .profile img{
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding-top: 20px;
+  transition: all 0.5s ease; 
+}
+.wrapper .sidebar .profile img:hover{
+  padding-left: 10px;
+}
+.footer {
+  position: relative;
+    width: 100%;
+    height: 40px;
+  background: #3586ff;
+  min-height: 80px;
+  padding: 10px 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 10px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #Table {
+            font-size: 16px;
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #Table th,
+        #Table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #Container {
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #waitingMessage {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #timer {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Program Antrian</h1>
+
+    <div id="Container">
+        <button onclick="startQueue()">Mulai Antrian</button>
+        <button onclick="processQueue()">Antrian Selanjutnya</button>
+
+        <table id="Table">
+            <thead>
+                <tr>
+                    <th>Nomor Antrian</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="queue">-</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="waitingMessage"></div>
+        <div id="timer"></div>
+    </div>
+
+    <script>
+        var queueElement = document.getElementById('queue');
+        var waitingMessageElement = document.getElementById('waitingMessage');
+        var timerElement = document.getElementById('timer');
+        var currentQueueNumber = 0;
+        var queueInterval;
+
+        function displayQueueNumber(i) {
+            queueElement.textContent = i;
+        }
+
+        function displayWaitingMessage() {
+            waitingMessageElement.textContent = 'Silakan tunggu, antrian selanjutnya akan tampil dalam 2 menit.';
+        }
+
+        function hideWaitingMessage() {
+            waitingMessageElement.textContent = '';
+        }
+
+        function displayTimer(seconds) {
+            timerElement.textContent = 'Waktu tersisa: ' + seconds + ' detik';
+        }
+
+        function hideTimer() {
+            timerElement.textContent = '';
+        }
+
+        function processQueue() {
+            hideTimer();
+            displayWaitingMessage();
+
+            var secondsLeft = 120;
+            displayTimer(secondsLeft);
+
+            var countdownInterval = setInterval(function () {
+                secondsLeft--;
+
+                if (secondsLeft > 0) {
+                    displayTimer(secondsLeft);
+                } else {
+                    hideTimer();
+                    clearInterval(countdownInterval);
+
+                    if (currentQueueNumber < 100) {
+                        currentQueueNumber++;
+                    } else {
+                        currentQueueNumber = 0;
+                    }
+                    displayQueueNumber(currentQueueNumber);
+                }
+            }, 1000);
+
+            setTimeout(function () {
+                hideWaitingMessage();
+                clearInterval(countdownInterval);
+            }, 120000);
+        }
+
+        function startQueue() {
+            currentQueueNumber = 0;
+            displayQueueNumber(currentQueueNumber);
+
+
+            queueInterval = setInterval(processQueue, 120000);
+        }
+
+        function stopQueue() {
+            clearInterval(queueInterval);
+        }
+
+        function toggleQueue() {
+            if (queueInterval) {
+                stopQueue();
+                hideWaitingMessage();
+                hideTimer();
+            } else {
+                startQueue();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

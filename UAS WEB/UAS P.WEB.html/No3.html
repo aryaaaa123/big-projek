@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Tiket Kereta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: grey;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-image: url(gerbong\ kereta.jpeg);
+            text-align: center;
+            padding: 20px;
+            display: block;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        i {
+            color: white;
+        }
+
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 70px;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            background-color: grey;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #result-container {
+            margin-top: 20px;
+        }
+
+        #result-container p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Formulir Pencetakan Tiket Kereta</h1>
+        <i>PT. Kreta Api Indonesia (Persero)</i>
+    </header>
+
+    <div class="form-container">
+        <h2>Cetak Tiket Kereta</h2>
+        <div class="form-group">
+            <label for="kodePemesanan">Kode Pemesanan</label>
+            <input type="text" id="kodePemesanan" placeholder="Masukkan Kode Pemesanan">
+        </div>
+        <div class="form-group">
+            <button onclick="cetakTiket()">Cari Tiket</button>
+        </div>
+        <div id="result-container"></div>
+    </div>
+    <footer>
+        &copy; 2024 PT.KAI INDONESIA. Hak Cipta Dilindungi Undang-Undang.
+    </footer>
+    <script>
+        var dataTiket = [
+            ["APXX001", "Eka Dimas Savera", "123456789012", "Dari Yogyakarta ke Kutoarjo", "Ekonomi 5 / 10D"],
+            ["APXX002", "Ambon", "098765432109"],
+            ["APXX003", "Yayak", "456789012345"],
+            ["APXX004", "Pambudi", "789012345678"],
+            ["APXX005", "Ucup", "321098765432"]
+        ];
+
+        function cetakTiket() {
+            var kodePemesanan = document.getElementById("kodePemesanan").value;
+            var resultContainer = document.getElementById("result-container");
+            var found = false;
+
+            for (var i = 0; i < dataTiket.length; i++) {
+                if (dataTiket[i][0] === kodePemesanan) {
+                    resultContainer.innerHTML = `
+                        <p>Kode Pemesanan: ${dataTiket[i][0]}</p>
+                        <p>Nama Lengkap: ${dataTiket[i][1]}</p>
+                        <p>No KTP: ${dataTiket[i][2]}</p>
+                        <p>Rute: ${dataTiket[i][3]}</p>
+                        <p>Informasi Tempat Duduk: ${dataTiket[i][4]}</p>
+                    `;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                resultContainer.innerHTML = "<p>Data tidak ditemukan</p>";
+            }
+        }
+    </script>
+</body>
+
+</html>
